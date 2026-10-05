@@ -1,6 +1,6 @@
 # 🚭 Cigarettes-Diary
 
-A web-based diary application to track and monitor your daily cigarette consumption. Get clear insights into your smoking habits with an intuitive dashboard interface.
+A web-based diary application to track and monitor your daily cigarette consumption. Get clear insights into your smoking habits with an intuitive dashboard and simple habit tracking workflow.
 
 ---
 
@@ -9,10 +9,12 @@ A web-based diary application to track and monitor your daily cigarette consumpt
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Development](#development)
+- [Quick Start](#quick-start)
+- [Manual Installation](#manual-installation)
+- [Running the App](#running-the-app)
 - [Building for Production](#building-for-production)
 - [Project Structure](#project-structure)
+- [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -23,39 +25,86 @@ A web-based diary application to track and monitor your daily cigarette consumpt
 - 📊 Track daily cigarette consumption
 - 📈 View consumption overview and statistics
 - 🎨 Clean and intuitive user interface
-- ⚡ Fast development experience with Hot Module Replacement (HMR)
-- 🔐 Secure JWT authentication for API
-- 📱 Responsive design with React + TypeScript
+- ⚡ Fast development experience with Vite + HMR
+- 🔐 JWT-based authentication through the PHP backend
+- 📱 Responsive design for desktop and mobile use
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React** - UI library
-- **TypeScript** - Type safety
-- **Vite** - Build tool and dev server
-- **ESLint** - Code quality
+- React
+- TypeScript
+- Vite
+- ESLint
 
 ### Backend
-- **PHP** - Server-side logic
-- **Composer** - PHP dependency manager
-- **firebase/php-jwt** - JWT authentication
+- PHP
+- Composer
+- firebase/php-jwt
 
 ---
 
 ## 📦 Prerequisites
 
-Make sure you have the following installed on your system:
+Before installing, make sure the following tools are installed:
 
-- **Node.js** (v16 or higher) - [Download](https://nodejs.org/)
-- **npm** (comes with Node.js)
-- **PHP** (v7.4 or higher) - [Download](https://www.php.net/)
-- **Composer** - [Download](https://getcomposer.org/)
+- Node.js 16 or newer
+- npm 7 or newer
+- PHP 7.4 or newer
+- Composer
+
+Check them with:
+
+```bash
+node --version
+npm --version
+php --version
+composer --version
+```
+
+If any command fails, install the missing tool before continuing.
+
+Useful links:
+- https://nodejs.org/
+- https://www.php.net/
+- https://getcomposer.org/
 
 ---
 
-## 🚀 Installation
+## 🚀 Quick Start
+
+After cloning the repository, the easiest setup is to use the included setup scripts.
+
+### macOS / Linux
+
+```bash
+git clone https://github.com/Ben3425/Cigarettes-Diary.git
+cd Cigarettes-Diary
+chmod +x setup.sh
+./setup.sh
+```
+
+### Windows PowerShell
+
+```powershell
+git clone https://github.com/Ben3425/Cigarettes-Diary.git
+cd Cigarettes-Diary
+.\setup.ps1
+```
+
+The setup scripts will:
+- install frontend dependencies with npm
+- install backend dependencies with Composer
+- create a `.env` file from `.env.example` if needed
+- verify the environment is ready to run locally
+
+For more details, see [INSTALL.md](INSTALL.md).
+
+---
+
+## 🔧 Manual Installation
 
 ### Step 1: Clone the Repository
 
@@ -66,146 +115,166 @@ cd Cigarettes-Diary
 
 ### Step 2: Install Frontend Dependencies
 
-Install all Node.js dependencies:
-
 ```bash
 npm install
 ```
 
 ### Step 3: Install PHP Dependencies
 
-Install Composer dependencies for the PHP API:
-
 ```bash
+cd php-api
 composer install
+cd ..
 ```
 
-This will install:
-- Composer's autoloader
-- [firebase/php-jwt](https://github.com/firebase/php-jwt) - JWT library for secure authentication
+### Step 4: Create Environment File
 
-### Step 4: Configure Environment (Optional)
+```bash
+cp .env.example .env
+```
 
-If your project uses environment variables, create a `.env` file in the root directory and add your configuration.
+Example configuration:
+
+```env
+VITE_API_URL=http://localhost:8000/api
+VITE_APP_NAME=Cigarettes-Diary
+VITE_ENVIRONMENT=development
+```
 
 ---
 
-## 💻 Development
+## 💻 Running the App
 
-Start the development server with hot module replacement (HMR):
+Start the frontend in one terminal:
 
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173` (or another port if 5173 is in use).
+Open the app in your browser:
+
+```text
+http://localhost:5173
+```
+
+Start the PHP backend in a second terminal:
+
+```bash
+cd php-api
+php -S localhost:8000
+```
+
+The frontend expects the backend to be available at `http://localhost:8000`.
 
 ---
 
 ## 🏗️ Building for Production
 
-Build the application for production deployment:
+Create a production build with:
+
+```bash
+npm run build
+```
+
+You can also run:
 
 ```bash
 npx vite build
 ```
 
-This command will:
-- Compile React and TypeScript code
-- Optimize and minify assets
-- Generate production-ready files in the `dist/` directory
-
-### Production Output
-
-After building, your optimized files will be located in:
-
-```
-dist/
-├── index.html
-├── assets/
-│   ├── index.js
-│   ├── index.css
-│   └── ...
-└── ...
-```
-
-Deploy the contents of the `dist/` folder to your hosting provider.
+The generated files will be placed in the `dist/` directory for deployment.
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 Cigarettes-Diary/
-├── src/                      # React source code
-│   ├── components/           # React components
-│   ├── pages/               # Page components
-│   ├── App.tsx              # Main App component
-│   └── main.tsx             # Entry point
-├── public/                  # Static assets
-├── php-api/                 # PHP backend code
-│   ├── vendor/              # Composer dependencies
-│   ├── src/                 # PHP source files
-│   └── composer.json        # PHP dependencies
-├── dist/                    # Production build output (generated)
-├── node_modules/            # Node.js dependencies (generated)
-├── package.json             # Frontend dependencies
-├── tsconfig.json            # TypeScript configuration
-├── vite.config.ts           # Vite configuration
-├── eslint.config.js         # ESLint configuration
-└── README.md                # This file
+├── src/                    # React + TypeScript frontend source
+├── public/                 # Static frontend assets
+├── php-api/                # PHP backend code
+│   ├── src/
+│   ├── vendor/            # Composer dependencies
+│   └── composer.json
+├── dist/                  # Production build output
+├── .env.example           # Example environment variables
+├── .gitignore
+├── INSTALL.md             # Easy setup and troubleshooting guide
+├── README.md              # Project documentation
+├── setup.sh               # One-command setup for macOS/Linux
+├── setup.ps1              # One-command setup for Windows
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── eslint.config.js
+├── LICENSE
+└── ...
 ```
 
 ---
 
-## 🔧 Available Scripts
+## 🔍 Troubleshooting
 
-In the project directory, you can run:
+### `node` or `npm` not found
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server with HMR |
-| `npm run build` | Build for production |
-| `npx vite build` | Build using Vite directly |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint to check code quality |
+Install Node.js from https://nodejs.org/
+
+### `composer` not found
+
+Install Composer from https://getcomposer.org/
+
+### `npm install` fails
+
+Try:
+
+```bash
+npm cache clean --force
+npm install
+```
+
+### `composer install` fails
+
+Try:
+
+```bash
+composer update
+```
+
+### Port already in use
+
+If port 5173 is already taken, start the app on another port:
+
+```bash
+npm run dev -- --port 3000
+```
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how you can help:
+Contributions are welcome.
 
-1. **Fork** the repository
-2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **Push** to the branch (`git push origin feature/amazing-feature`)
-5. **Open** a Pull Request
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/my-improvement`
+3. Commit your changes: `git commit -m "Add my improvement"`
+4. Push to your branch: `git push origin feature/my-improvement`
+5. Open a Pull Request
 
 ---
 
 ## 📝 License
 
-This project is provided as-is for personal and educational use.
-
----
-
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check existing [GitHub Issues](https://github.com/Ben3425/Cigarettes-Dairy/issues)
-2. Create a new issue with a detailed description
-3. Include steps to reproduce the problem
+This project is licensed under the MIT License.
 
 ---
 
 ## 🎉 Acknowledgments
 
-- Built with [Vite](https://vitejs.dev/) - Next Generation Frontend Tooling
-- React community and documentation
-- [firebase/php-jwt](https://github.com/firebase/php-jwt) for secure authentication
+- Vite
+- React
+- TypeScript
+- firebase/php-jwt
 
 ---
 
-**Happy tracking!** 🎯
+Happy tracking! 🎯
