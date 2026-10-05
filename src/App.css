@@ -1,0 +1,153 @@
+/* 
+ * 45
+ * 28
+ * 18
+ * 11
+ *  7
+ * */
+:root {
+  --bg-dark: hsl(0, 0%, 0%);
+  --table-bg: hsl(0, 0%, 5%);
+  --entry-bg: hsl(0, 0%, 7.5%);
+  --table-td-bg: hsl(0, 0%, 10%);
+
+  --table-border: hsl(0, 0%, 80%);
+  --normal: hsl(0, 0%, 85%);
+  --highlight: hsl(0, 0%, 95%);
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--normal);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 0.5em;
+  text-align: center;
+}
+
+label {
+  float: left;
+  display: inline-block;
+  padding: 0.75em 1.25em;
+  place-self: center;
+}
+
+label:after {
+  content: ": ";
+}
+
+ul {
+  padding: 0.25em;
+}
+
+li {
+  place-self: center;
+}
+
+form {
+  text-align: center;
+  margin: 1em;
+  width: 100%;
+}
+
+select {
+  margin: 0.5em;
+  padding: 0.5em;
+  background-color: var(--entry-bg);
+  color: var(--highlight);
+  width: 11em;
+  text-align: center;
+}
+
+table {
+  background-color: var(--table-bg);
+}
+
+table th, table td {
+  border: solid 1px var(--table-border);
+  padding: 1em;
+}
+
+table th {
+  font-size: 28px;
+  background-color: var(--table-th-bg);
+}
+
+input {
+  margin: 0.5em;
+  padding: 0.5em;
+  border: solid 1px var(--highlight);
+  border-radius: 11px;
+}
+
+button {
+  margin: 0.5em;
+  padding: 0.5em;
+  color: hsl(35, 96%, 58%);
+  place-self: center;
+  border: solid 1px var(--highlight);
+  border-radius: 18px;
+  background-color: var(--entry-bg);
+}
+
+h1 {
+  font-size: 28px;
+  color: var(--normal);
+  margin: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  color: var(--normal);
+  margin: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+}
+
+a {
+  font-size: 18px;
+}
+
+#entry-input-container {
+  display: inline-block;
+  flex-direction: column;
+  width: 90%;
+  padding: 0.5em;
+  place-items: center;
+  text-align: center;
+}
+
+.table-container {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  width: 90%;
+  padding: 0.5em;
+  place-self: center;
+  place-items: center;
+  text-align: center;
+}
+
+#submit_button{
+  margin: 0.5em;
+  padding: 0.5em;
+  color: hsl(35, 96%, 58%);
+  place-self: center;
+  border: solid 1px var(--highlight);
+  border-radius: 20px;
+  background-color: var(--entry-bg);
+}
+
+
+@media screen and (max-width: 501px) {
+body {
+  font-size: 18px;
+}
+
+table th {
+  font-size: 18px;
+}  
+
+}

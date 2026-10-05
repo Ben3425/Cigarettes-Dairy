@@ -1,0 +1,114 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Vite
+/docs/.vitepress/cache
+/docs/.vitepress/.temp
+/packages/vite/LICENSE
+.eslintcache
+.vit
+stats.html
+.vite/
+*.tsbuildinfo
+
+# React
+node_modules/
+build/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+coverage/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Enviromnent files
+*.env
+*.env.local
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+# PHP
+web.config
+authorize.php
+cron.php
+index.php
+install.php
+update.php
+xmlrpc.php
+/includes
+/misc
+/modules
+/profiles
+/scripts
+/themes
+.htaccess
+vendor/
+vendor/*
+composer.lock
+*.cache
+.phpunit.result.cache
+.php-cs-fixer.cache
+.env
+storage/*.key
+Homestead.yaml
+Homestead.json
+npm-debug.log
+yarn-error.log
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Vim
+[._]*.s[a-v][a-z]
+!*.svg
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+Sessionx.vim
+.netrwhist
+tags
+[._]*.un~
+
+# Next.js
+node_modules/
+.next/
+out/
+build/
+.env*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vercel
+*.tsbuildinfo
+next-env.d.ts
