@@ -1,6 +1,6 @@
-# 🚭 Cigarettes-Dairy
+# 🚭 Cigarettes-Diary
 
-A professional web-based diary application for tracking and monitoring daily cigarette consumption. The project is designed to help users understand smoking habits through a clean dashboard, simple data entry, and clear insights over time.
+A professional web-based diary application for tracking and monitoring daily cigarette consumption. The project is designed to help users understand smoking habits through a clean dashboard, simple workflow, and clear historical data.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-v16%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -30,7 +30,7 @@ A professional web-based diary application for tracking and monitoring daily cig
 
 ## Project Overview
 
-Cigarettes-Dairy is a full-stack application that combines a modern React + TypeScript frontend with a secure PHP backend using JWT authentication. The goal is to help users:
+Cigarettes-Diary is a full-stack application that combines a modern React + TypeScript frontend with a secure PHP backend using JWT authentication. The goal is to help users:
 
 - Track daily cigarette use
 - Review historical consumption patterns
@@ -104,8 +104,8 @@ Useful links:
 ### 1) Clone the repository
 
 ```bash
-git clone https://github.com/Ben3425/Cigarettes-Dairy.git
-cd Cigarettes-Dairy
+git clone https://github.com/Ben3425/Cigarettes-Diary.git
+cd Cigarettes-Diary
 ```
 
 ### 2) Install frontend dependencies
@@ -142,7 +142,7 @@ Example:
 
 ```env
 VITE_API_URL=http://localhost:8000/api
-VITE_APP_NAME=Cigarettes-Dairy
+VITE_APP_NAME=Cigarettes-Diary
 ```
 
 If `.env.example` does not exist yet, create a `.env` manually and add only the required values for your setup.
@@ -253,7 +253,7 @@ This allows you to preview the production bundle locally before deployment.
 A typical project structure looks like this:
 
 ```text
-Cigarettes-Dairy/
+Cigarettes-Diary/
 ├── public/
 ├── src/
 │   ├── App.tsx
@@ -385,7 +385,7 @@ If you run into issues:
 4. Open an issue in the GitHub repository with details and error output
 
 Repository:
-- https://github.com/Ben3425/Cigarettes-Dairy
+- https://github.com/Ben3425/Cigarettes-Diary
 
 ---
 
