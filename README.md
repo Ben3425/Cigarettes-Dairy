@@ -1,3 +1,5 @@
+# Vendor + Firebase-JWT
+
 You need to install [Vendor](https://github.com/composer/composer) and [firebase/php-jwt](https://github.com/firebase/php-jwt) for the php-api.
 
 # React + TypeScript + Vite
