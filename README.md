@@ -1,4 +1,4 @@
-# 🚭 Cigarettes-Dairy
+# 🚭 Cigarettes-Diary
 
 A web-based diary application to track and monitor your daily cigarette consumption. Get clear insights into your smoking habits with an intuitive dashboard interface.
 
@@ -60,8 +60,8 @@ Make sure you have the following installed on your system:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/Ben3425/Cigarettes-Dairy.git
-cd Cigarettes-Dairy
+git clone https://github.com/Ben3425/Cigarettes-Diary.git
+cd Cigarettes-Diary
 ```
 
 ### Step 2: Install Frontend Dependencies
@@ -136,7 +136,7 @@ Deploy the contents of the `dist/` folder to your hosting provider.
 ## 📁 Project Structure
 
 ```
-Cigarettes-Dairy/
+Cigarettes-Diary/
 ├── src/                      # React source code
 │   ├── components/           # React components
 │   ├── pages/               # Page components
